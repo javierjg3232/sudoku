@@ -5,23 +5,29 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "sudoko",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
+      "image": "./assets/splash-icon.png",
       "backgroundColor": "#F5F4EE",
       "resizeMode": "contain"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.javiergonzalez.sudoko"
     },
     "android": {
+      "package": "com.javiergonzalez.sudoko",
       "adaptiveIcon": {
-        "backgroundColor": "#F5F4EE"
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#D97757"
       }
     },
     "web": {
       "bundler": "metro",
-      "output": "single"
+      "output": "single",
+      "favicon": "./assets/favicon.png"
     },
     "plugins": ["expo-router"],
     "experiments": {
