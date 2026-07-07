@@ -10,6 +10,8 @@ export interface Theme {
   text: string;
   textMuted: string;
   border: string;
+  gridLine: string; // thin cell separators on the board
+  gridLineBold: string; // 3x3 box separators and board edge
   accent: string;
   accentSoft: string; // tinted fill for highlighted cells / active chips
   accentText: string; // text/icon color on top of accent
@@ -32,6 +34,8 @@ export const lightTheme: Theme = {
   text: '#1F1E1D',
   textMuted: '#6E6B66',
   border: '#E5E1D8',
+  gridLine: '#CFCABF',
+  gridLineBold: '#57534C',
   accent: CLAY,
   accentSoft: '#F4E3DB',
   accentText: '#FFFFFF',
@@ -52,6 +56,8 @@ export const darkTheme: Theme = {
   text: '#F5F4EE',
   textMuted: '#A6A29A',
   border: '#3A3A37',
+  gridLine: '#4C4C48',
+  gridLineBold: '#B8B4AC',
   accent: CLAY,
   accentSoft: '#4A3128',
   accentText: '#1F1E1D',

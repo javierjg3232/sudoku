@@ -3,6 +3,7 @@ module.exports = function (api) {
   return {
     // unstable_transformImportMeta: zustand's ESM build uses `import.meta`,
     // which classic web scripts (and Hermes) cannot parse untransformed.
+    // On SDK 56+ this option is renamed `transformImportMeta` (on by default).
     presets: [['babel-preset-expo', { unstable_transformImportMeta: true }]],
   };
 };
