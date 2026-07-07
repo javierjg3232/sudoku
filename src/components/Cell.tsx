@@ -44,8 +44,8 @@ function CellBase({
   let numberColor = given ? theme.givenText : theme.accent;
   if (isConflict || isWrong) numberColor = theme.error;
 
-  const thick = theme.textMuted;
-  const thin = theme.border;
+  const thick = theme.gridLineBold;
+  const thin = theme.gridLine;
 
   const a11yValue =
     value !== 0
@@ -66,10 +66,10 @@ function CellBase({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: background,
-        borderLeftWidth: col % 3 === 0 ? 1.5 : StyleSheet.hairlineWidth,
-        borderTopWidth: row % 3 === 0 ? 1.5 : StyleSheet.hairlineWidth,
-        borderRightWidth: col === 8 ? 1.5 : 0,
-        borderBottomWidth: row === 8 ? 1.5 : 0,
+        borderLeftWidth: col % 3 === 0 ? 2 : 1,
+        borderTopWidth: row % 3 === 0 ? 2 : 1,
+        borderRightWidth: col === 8 ? 2 : 0,
+        borderBottomWidth: row === 8 ? 2 : 0,
         borderLeftColor: col % 3 === 0 ? thick : thin,
         borderTopColor: row % 3 === 0 ? thick : thin,
         borderRightColor: thick,
