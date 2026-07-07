@@ -28,7 +28,9 @@ references it; SDK 54's tree no longer hoists it transitively — Metro fails wi
 TransformError 500 if it's missing) **and** it must be the SDK-matched version — install
 it with `npx expo install babel-preset-expo`, never `npm install` (a newer major targets
 a different Hermes and causes `SyntaxError: private properties are not supported` in
-Expo Go).
+Expo Go). The preset is configured with `unstable_transformImportMeta: true` in
+`babel.config.js` — zustand's ESM build uses `import.meta`, which otherwise breaks the
+web bundle at parse time (blank page, no console errors).
 
 **`src/engine/`** — pure, framework-free Sudoku logic. No React, no storage imports.
 - `sudoku.ts`: `generateSolved` (randomized backtracking), `generatePuzzle(difficulty, rng?)`,

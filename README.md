@@ -35,6 +35,22 @@ npm start          # Expo dev server — press i (iOS), a (Android), or w (web)
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run test:engine` | Verify generated puzzles are uniquely solvable |
 
+## Release (App Store / Play Store)
+
+Built for [EAS](https://docs.expo.dev/eas/). One-time setup: an Apple Developer account,
+`npm i -g eas-cli`, `eas login`, and `git init` if this folder isn't a repo yet.
+
+```bash
+eas build --platform ios --profile production   # cloud build; EAS manages signing
+eas submit --platform ios --latest              # upload to App Store Connect
+```
+
+Icons/splash live in `assets/` (regenerable — clay `#` mark on the app palette).
+Bundle IDs are `com.javiergonzalez.sudoko` in `app.json`; change them before the first
+submit if desired (they're permanent after that). Store metadata (screenshots,
+description, privacy policy URL) is filled in App Store Connect; the app collects no
+data — everything is on-device.
+
 ## Layout
 
 ```
